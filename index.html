@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="./css/global.css"> -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Pomodoro</title>
+    <script src="scripts/script.js"></script>
+</head>
+
+<body class="text-white bg-green-200 m-0 p-0 flex flex-col justify-between h-[100vh] font-mono">
+    <header id="header" class="h-[3rem] flex flex-none flex-col w-full bg-green-600 p-2">
+        <nav id="nav" class="m-auto w-full max-w-2xl">
+            <ul class="inline-flex justify-around w-full items-center text-white">
+                <li>Pomodoro</li>
+                <li>Sobre</li>
+                <li>Contato</li>
+            </ul>
+        </nav>
+    </header>
+    <main class="flex flex-col flex-1 p-4 md:p-8">
+        <audio id="bell" class="">
+            <source src="audio/bell.mp3">
+        </audio>
+        <div class="text-green-900 text-4xl font-bold text-center mb-8">
+            <h1>Pomodoro free-use</h1>
+            <span class="text-lg">feel free to use and study with this pomodoro tool</span>
+        </div>
+        <section class="container mx-auto bg-green-300 max-w-3xl p-2 rounded shadow-xs shadow-black">
+            <div class="m-auto text-center">
+                <h4 class="text-2xl font-bold align-center text-shadow text-shadow-black">Mode Select</h4>
+       
+                <button id="default"
+                    class="bg-green-900 rounded p-1 w-full max-w-[6rem] active:bg-blue-300 hover:cursor-pointer"
+                    type="button" onclick="new Main().startStudy()">
+                    Default
+                </button>
+                <button id="easy" class="bg-green-900 rounded p-1 w-full max-w-[6rem] active:bg-blue-300 hover:cursor-pointer"
+                    type="button" onclick="new Main(2,1).startStudy()">
+                    Easy
+                </button>
+                 <button id="harder" class="bg-green-900 rounded p-1 w-full max-w-[6rem] active:bg-blue-300 hover:cursor-pointer"
+                    type="button" onclick="new Main(30,5).startStudy()">
+                    Harder
+                </button>
+            </div>
+            <div id="timer" class="w-full bg-blue-300 mt-4">
+                <div class="flex flex-col items-center gap-4">
+                    <div id="phase" class="text-green-900 text-4xl w-full text-center">
+                        Study
+                    </div>
+                    <div id="time" class="text-red-600 font-bold text-4xl">
+                        02:00
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer id="footer" class="h-[2rem] bg-green-600 flex flex-row justify-center items-center">
+        <span class="text-center">github.com/hermesjrns</span>
+    </footer>
+</body>
+
+</html>
